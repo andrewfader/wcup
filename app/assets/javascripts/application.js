@@ -11,6 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= require dynamicaudio
+//= require jquery.dimensions
+//= require jsnes
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
+//= require websocket_rails/main
+
