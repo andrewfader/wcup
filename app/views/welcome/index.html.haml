@@ -1,0 +1,60 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %title JSNES: A JavaScript NES emulator
+  %body
+    %h1 JSNES
+    #emulator
+    %h2 Controls
+    %table#controls
+      %tr
+        %th Button
+        %th Player 1
+        %th Player 2
+      %tr
+        %td Left
+        %td Left
+        %td Num-4
+      %tr
+        %td Right
+        %td Right
+        %td Num-6
+      %tr
+        %td Up
+        %td Up
+        %td Num-8
+      %tr
+        %td Down
+        %td Down
+        %td Num-2
+      %tr
+        %td A
+        %td X
+        %td Num-7
+      %tr
+        %td B
+        %td Z/Y
+        %td Num-9
+      %tr
+        %td Start
+        %td Enter
+        %td Num-1
+      %tr
+        %td Select
+        %td Ctrl
+        %td Num-3
+    %script{:charset => "utf-8", :src => "jquery-1.4.2.min.js", :type => "text/javascript"}
+    %script{:charset => "utf-8", :src => "dynamicaudio-min.js", :type => "text/javascript"}
+    %script{:charset => "utf-8", :src => "nes.js", :type => "text/javascript"}
+    %script{:charset => "utf-8", :src => "utils.js", :type => "text/javascript"}
+    %script{:charset => "utf-8", :src => "cpu.js", :type => "text/javascript"}
+    %script{:charset => "utf-8", :src => "keyboard.js", :type => "text/javascript"}
+    %script{:charset => "utf-8", :src => "mappers.js", :type => "text/javascript"}
+    %script{:charset => "utf-8", :src => "papu.js", :type => "text/javascript"}
+    %script{:charset => "utf-8", :src => "ppu.js", :type => "text/javascript"}
+    %script{:charset => "utf-8", :src => "rom.js", :type => "text/javascript"}
+    %script{:charset => "utf-8", :src => "i.js", :type => "text/javascript"}
+    %script{:charset => "utf-8", :src => "jsnes.js", :type => "text/javascript"}
+    %script{:charset => "utf-8", :type => "text/javascript"}
+      var nes; $(function() { nes = new JSNES({ 'ui': $('#emulator').JSNESUI({ "Working": [ ['World Cup', 'wc.nes'] ] }) }); });
