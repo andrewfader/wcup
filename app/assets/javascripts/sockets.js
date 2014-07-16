@@ -3,9 +3,16 @@ $(document).ready(function() {
   var name = prompt("Please enter your name", 'foo');
   var myId = name + Math.random().toString();
   var game = {id: myId}
+  var player;
   socket.trigger('games.create', game)
   var nes;
-  nes = new JSNES({ 'ui': $('#emulator').JSNESUI(['World Cup'])});
+  socket.bind(myId + '.start', function(game) {
+    player = game.player
+    if (game.player == '1') {
+      nes = new JSNES({ 'ui': $('#emulator').JSNESUI(['World Cup'])});
+    } else if (game.player == '2') {
+    }
+  });
   // 88[A] = va// X
   // 89[B] = va// Y
   // 90[B] = va// Z
@@ -16,7 +23,7 @@ $(document).ready(function() {
   // 37[LEFT] =// Left
   // 39[RIGHT] // Right
 
-  function pushKey(keyCode) {
+  function pushKey(keyCode, nes) {
     nes.keyboard.setKey(keyCode, 0x41);
     setTimeout(function() { nes.keyboard.setKey(keyCode, 0x40) }, 500);
   }
@@ -27,7 +34,7 @@ $(document).ready(function() {
       keyCode = {88: 103, 89: 105, 90: 105, 17: 99, 13: 97, 38: 104, 40: 98,
         37: 100, 39: 102}[game.keyCode]
         if (nes.keyboard != undefined) {
-          pushKey(keyCode);
+          pushKey(keyCode, nes);
           console.log('recd' + game.keyCode + game.name);
         }
     }
