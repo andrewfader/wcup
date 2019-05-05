@@ -6,7 +6,7 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'jbuilder'
-gem 'haml'
+gem 'hamlit'
 gem 'websocket-rails'
 gem 'jazz_hands'
 
