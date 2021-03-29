@@ -225,7 +225,7 @@ GEM
       redis
       redis-objects
       thin
-    yard (0.9.19)
+    yard (0.9.26)
 
 PLATFORMS
   ruby
