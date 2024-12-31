@@ -285,7 +285,7 @@ GEM
       redis
       redis-objects
       thin
-    yard (0.9.26)
+    yard (0.9.36)
     zeitwerk (2.7.1)
 
 PLATFORMS
